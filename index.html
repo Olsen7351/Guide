@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Stone Heating Oven Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .step-container {
+            transition: all 0.3s ease-in-out;
+        }
+        .step-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .step-container.active .step-content {
+            max-height: 1000px;
+        }
+        .step-container.active .chevron {
+            transform: rotate(180deg);
+        }
+        .diagram-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .diagram-modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900">Build Your Own Outdoor Stone Heating Oven</h1>
+            <p class="text-lg text-gray-600 mt-2">An interactive guide to creating a cozy and warm terrace centerpiece.</p>
+        </header>
+
+        <main class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Introduction</h2>
+                <p>This guide will walk you through building a beautiful and functional stone heating oven for your terrace. This design includes a fire chamber with a grate for easy ash removal, perfect for providing warmth on cool evenings. Follow these steps carefully for a safe and durable result.</p>
+            </section>
+
+            <section id="materials-tools" class="mb-8 step-container active">
+                <div class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg" onclick="toggleStep('materials-tools')">
+                    <h2 class="text-2xl font-semibold">Materials & Tools</h2>
+                    <svg class="w-6 h-6 chevron transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="step-content p-4">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Materials</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Concrete mix for foundation</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Rebar or wire mesh for foundation reinforcement</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Heat-resistant stones or bricks for the oven body</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Fire bricks for the fire chamber</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Refractory mortar (heat-resistant)</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Standard mortar for the outer stones</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Cast iron or heavy-duty steel grate</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Chimney flue pipe (clay or stainless steel)</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Chimney cap</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Gravel for drainage</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Tools</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Shovel and spade</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Wheelbarrow</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Level</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Trowel</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Brick hammer and chisel</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Measuring tape</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Safety glasses and gloves</li>
+                                <li class="flex items-center"><input type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded mr-3"> Buckets for mixing mortar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step1" class="mb-8 step-container">
+                <div class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg" onclick="toggleStep('step1')">
+                    <h2 class="text-2xl font-semibold">Step 1: Laying the Foundation</h2>
+                    <svg class="w-6 h-6 chevron transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="step-content p-4">
+                    <p class="mb-4">A solid foundation is crucial for a stable and long-lasting oven. Ensure it's level and built on firm ground.</p>
+                    <ol class="list-decimal list-inside space-y-2 mb-4">
+                        <li><strong>Choose a location:</strong> Select a safe spot away from flammable materials, your house, and overhanging trees. Check local regulations.</li>
+                        <li><strong>Excavate:</strong> Dig a square or rectangular pit about 30-40 cm deep. The size should be slightly larger than the base of your oven.</li>
+                        <li><strong>Add Gravel:</strong> Fill the bottom 10-15 cm with gravel for drainage and compact it firmly.</li>
+                        <li><strong>Pour Concrete:</strong> Mix and pour the concrete to fill the pit. Place rebar or wire mesh in the middle of the concrete for reinforcement.</li>
+                        <li><strong>Level and Cure:</strong> Use a level to ensure the surface is perfectly flat. Let the concrete cure for at least 48-72 hours, or as directed by the manufacturer.</li>
+                    </ol>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition" onclick="showDiagram('https://placehold.co/600x400/e2e8f0/4a5568?text=Foundation+Diagram\n\n1. Ground\n2. Gravel Layer\n3. Concrete Slab\n4. Rebar Mesh')">View Foundation Diagram</button>
+                </div>
+            </section>
+
+            <section id="step2" class="mb-8 step-container">
+                <div class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg" onclick="toggleStep('step2')">
+                    <h2 class="text-2xl font-semibold">Step 2: Building the Base & Ash Pit</h2>
+                    <svg class="w-6 h-6 chevron transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="step-content p-4">
+                    <p class="mb-4">This part of the structure supports the fire chamber and provides the space for ash collection.</p>
+                    <ol class="list-decimal list-inside space-y-2 mb-4">
+                        <li><strong>First Course:</strong> Lay the first layer of stones or concrete blocks on the cured foundation using standard mortar. Leave an opening at the back for ash removal.</li>
+                        <li><strong>Build Up Walls:</strong> Continue building the walls of the base to the desired height (e.g., 50-60 cm). Use a level to keep the walls straight and plumb.</li>
+                        <li><strong>Create Grate Support:</strong> Build ledges on the inside walls that will support the grate. These can be made by turning some bricks inwards or by using steel angle irons.</li>
+                        <li><strong>Ash Pit Floor:</strong> The concrete foundation serves as the floor of the ash pit. Ensure it's smooth for easy cleaning.</li>
+                    </ol>
+                     <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition" onclick="showDiagram('https://placehold.co/600x400/e2e8f0/4a5568?text=Base+and+Ash+Pit\n\n1. Base Walls\n2. Ash Removal Opening (Back)\n3. Grate Support Ledge')">View Base Diagram</button>
+                </div>
+            </section>
+
+            <section id="step3" class="mb-8 step-container">
+                <div class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg" onclick="toggleStep('step3')">
+                    <h2 class="text-2xl font-semibold">Step 3: Constructing the Fire Chamber</h2>
+                    <svg class="w-6 h-6 chevron transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="step-content p-4">
+                    <p class="mb-4">This is where the fire will be. It must be built with heat-resistant materials.</p>
+                    <ol class="list-decimal list-inside space-y-2 mb-4">
+                        <li><strong>Place the Grate:</strong> Set your cast iron or steel grate on the support ledges you created.</li>
+                        <li><strong>Lay Fire Bricks:</strong> Using refractory (heat-resistant) mortar, lay the fire bricks to form the floor and walls of the fire chamber on top of the base structure.</li>
+                        <li><strong>Shape the Chamber:</strong> Build the walls up. You can create a simple box shape or a slightly arched roof for better heat radiation. The front will be open.</li>
+                        <li><strong>Leave a Chimney Opening:</strong> At the top and towards the front of the chamber, leave an opening for the chimney flue. This helps draw smoke up and away, rather than out the front.</li>
+                    </ol>
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition" onclick="showDiagram('https://placehold.co/600x400/e2e8f0/4a5568?text=Fire+Chamber\n\n1. Grate\n2. Fire Brick Walls\n3. Chimney Opening\n4. Refractory Mortar')">View Fire Chamber Diagram</button>
+                </div>
+            </section>
+
+            <section id="step4" class="mb-8 step-container">
+                <div class="flex justify-between items-center cursor-pointer p-4 bg-gray-50 rounded-lg" onclick="toggleStep('step4')">
+                    <h2 class="text-2xl font-semibold">Step 4: Outer Stone & Chimney</h2>
+                    <svg class="w-6 h-6 chevron transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="step-content p-4">
+                    <p class="mb-4">The final steps involve adding the decorative outer layer and ensuring proper ventilation.</p>
+                    <ol class="list-decimal list-inside space-y-2 mb-4">
+                        <li><strong>Outer Stone Layer:</strong> Using standard mortar, build the outer wall with your chosen decorative stones around the fire brick chamber. Leave a small air gap (1-2 cm) between the firebox and the outer stone for insulation, or fill it with a loose insulating material like perlite or vermiculite mixed with mortar.</li>
+                        <li><strong>Install Chimney Flue:</strong> Place the chimney flue pipe into the opening you created. Secure it with refractory mortar.</li>
+                        <li><strong>Build Around Chimney:</strong> Continue building the outer stone layer up and around the base of the chimney flue to support it.</li>
+                        <li><strong>Add Chimney Cap:</strong> Place a cap on top of the chimney to keep rain and debris out.</li>
+                        <li><strong>Final Curing:</strong> Let the entire structure cure for at least a week before lighting the first small fire. This allows all the moisture in the mortar to evaporate slowly, preventing cracks.</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Safety & Maintenance</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>First Fire:</strong> Start with a small fire to cure the oven slowly. Gradually increase the size of fires over the next few uses.</li>
+                    <li><strong>Ash Removal:</strong> Regularly clear the ash from the pit below using a shovel or hoe. Do this when the oven is completely cold.</li>
+                    <li><strong>Inspection:</strong> Periodically check for cracks in the mortar and repair them with the appropriate mortar type.</li>
+                    <li><strong>Fire Safety:</strong> Always have a fire extinguisher or water source nearby. Never leave a fire unattended.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-8">
+            <p class="text-gray-600">Happy building! Enjoy the warmth and ambiance of your new stone oven.</p>
+        </footer>
+    </div>
+
+    <div id="diagramModal" class="diagram-modal" onclick="this.style.display='none'">
+        <span class="close-modal">&times;</span>
+        <img class="diagram-modal-content" id="diagramImage">
+    </div>
+
+    <script>
+        function toggleStep(stepId) {
+            const step = document.getElementById(stepId);
+            step.classList.toggle('active');
+        }
+
+        function showDiagram(src) {
+            const modal = document.getElementById('diagramModal');
+            const img = document.getElementById('diagramImage');
+            img.src = src;
+            modal.style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
